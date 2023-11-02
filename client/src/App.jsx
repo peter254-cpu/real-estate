@@ -11,6 +11,7 @@ import UpdateListing from "./pages/UpdateListing";
 import Listing from "./pages/Listing"
 import Search from "./components/Search";
 import React from "react";
+import 400page from "./components/400page"
 
 
 
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/create-listing" element ={<CreateListing />} />
           <Route path="/update-listing/:listingId" element ={<UpdateListing />} />
       </Route>
+      <Route component={400page} />
     </Routes>
   </BrowserRouter>
 }
