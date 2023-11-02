@@ -12,7 +12,7 @@ import cookieParser from "cookie-parser";
 const app = express()
 app.use(cookieParser())
 app.use(express.json())
-//app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors({ origin:true, credentials:true }));
 
@@ -35,7 +35,7 @@ app.use((err, req, res, next) => {
 })
 dotenv.config()
 const PORT = process.env.PORT || 5000
-mongoose.connect('mongodb+srv://peterslap:59911838@cluster0.vo1wl1e.mongodb.net/?retryWrites=true&w=majority').then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
     app.listen(PORT, () => {
         console.log(`Server running on ${PORT}`)
     })
