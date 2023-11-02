@@ -144,7 +144,7 @@ const Profile = () => {
 }
   const handleListingDelete = async (listingId) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/listing/delete/${listingId}`, {
+      const res = await fetch(`https://realestates-apllication.onrender.com/api/listing/delete/${listingId}`, {
         method: "DELETE",
         credentials: "include",
       });

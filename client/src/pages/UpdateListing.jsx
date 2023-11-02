@@ -33,7 +33,7 @@ const CreateListing = () => {
   useEffect(() => {
     const fetchListing = async () => {
       const listingId = params.listingId;
-      const res = await fetch(`http://localhost:3000/api/listing/get/${listingId}`)
+      const res = await fetch(`https://realestates-apllication.onrender.com/api/listing/get/${listingId}`)
       const data = await res.json()
       setFormData(data)
       if(data.success === false){

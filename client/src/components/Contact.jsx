@@ -11,7 +11,7 @@ const Contact = ({listing}) => {
     useEffect(() => {
       const fetchLandLord = async () => {
         try {
-          const res = await fetch(`http://localhost:3000/api/user/${listing.userRef}`,{
+          const res = await fetch(`https://realestates-apllication.onrender.com/api/user/${listing.userRef}`,{
             credentials: "include",
           })
           const data = await res.json();

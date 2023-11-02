@@ -48,7 +48,7 @@ const Search = () => {
         const fetchListings = async () => {
           setLoading(true)
           const searchQuery = urlParams.toString()
-          const res = await fetch(`http://localhost:3000/api/listing/get?${searchQuery}`)
+          const res = await fetch(`https://realestates-apllication.onrender.com/api/listing/get?${searchQuery}`)
           const data =  await res.json()
           setListings(data);
           setLoading(false)

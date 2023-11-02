@@ -25,7 +25,7 @@ const Listing = () => {
         try {
             setLoading(true)
             const fetchListing = async () => {
-                const res = await fetch(`http://localhost:3000/api/listing/get/${params.listingId}`)
+                const res = await fetch(`https://realestates-apllication.onrender.comapi/listing/get/${params.listingId}`)
                 const data = await res.json()
                 if(data.success === false){
                     setError(true)
