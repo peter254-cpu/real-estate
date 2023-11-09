@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     const fetchOfferListing = async () =>{
       try {
-        const res = await axios.get('https://realestates-apllication.onrender.com/api/listing/get?offer=true&limit=3');
+        const res = await axios.get('https://realestatesclient.onrender.com/api/listing/get?offer=true&limit=3');
         const data = await res.json()
         setOfferListings(data)
         fetchRentListing()
@@ -29,7 +29,7 @@ const Home = () => {
     }
     const fetchRentListing = async () => {
       try {
-        const res = await fetch('https://realestates-apllication.onrender.com/api/listing/get?rent=true&limit=3');
+        const res = await fetch('https://realestatesclient.onrender.com/api/listing/get?rent=true&limit=3');
         const data = await res.json()
         setRentListing(data)
       } catch (error) {

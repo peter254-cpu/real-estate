@@ -24,7 +24,7 @@ const Profile = () => {
   const handleDeleteUser = async () => {
     try {
       deleteUserStart()
-      const res = await fetch(`http://localhost:3000/api/user/delete/${currentUser._id}}`, {
+      const res = await fetch(`https://realestatesclient.onrender.com/api/user/delete/${currentUser._id}}`, {
         method: "DELETE",
         credentials: "include",
         headers:{
@@ -45,7 +45,7 @@ const Profile = () => {
   const handleSignOut =  async () => {
     try {
       dispatch(signOutUserStart())
-      const res = await fetch('http://localhost:3000/api/auth/logout',
+      const res = await fetch('https://realestatesclient.onrender.com/api/auth/logout',
         {
           credentials: "include",
         }
@@ -79,7 +79,7 @@ const Profile = () => {
       const handleShowListing = async () => {
         try {
           setFileUplaodError(false)
-          const res = await fetch(`http://localhost:3000/api/user/listings/${currentUser._id}`,
+          const res = await fetch(`https://realestatesclient.onrender.com/api/user/listings/${currentUser._id}`,
             {
               credentials: "include",
             }
@@ -99,7 +99,7 @@ const Profile = () => {
         e.preventDefault();
         try {
           dispatch(updateUserStart())
-          const res = await fetch(`http://localhost:3000/api/user/update/${currentUser._id}`, {
+          const res = await fetch(`https://realestatesclient.onrender.com/api/user/update/${currentUser._id}`, {
             method: "POST",
             credentials: "include",
             headers: {

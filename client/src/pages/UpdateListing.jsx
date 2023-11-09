@@ -133,7 +133,7 @@ const CreateListing = () => {
         if(+formData.regularPrice < +formData.discountPrice) return setError('Discount Price must be lower than regular price')
         setLoading(true)
         setError(false)
-        const res = await fetch(`http://localhost:3000/api/listing/update/${params.listingId}`, {
+        const res = await fetch(`https://realestatesclient.onrender.com/api/listing/update/${params.listingId}`, {
             method: "POST",
             credentials: "include",
             headers: {
