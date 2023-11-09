@@ -18,10 +18,11 @@ const Home = () => {
   useEffect(() => {
     const fetchOfferListing = async () =>{
       try {
-        const res = await axios.get('https://realestatesclient.onrender.com/api/listing/get?offer=true&limit=3');
+        const res = await fetch('https://realestatesclient.onrender.com/api/listing/get?offer=true&limit=3');
         const data = await res.json()
         setOfferListings(data)
         fetchRentListing()
+        console.log(data)
         fetchSaleListings()
       } catch (error) {
         console.log(error)
@@ -32,6 +33,7 @@ const Home = () => {
         const res = await fetch('https://realestatesclient.onrender.com/api/listing/get?rent=true&limit=3');
         const data = await res.json()
         setRentListing(data)
+        console.log("listing data", data)
       } catch (error) {
         console.log(error)
       }
@@ -42,6 +44,7 @@ const Home = () => {
         const res = await fetch('https://realestates-apllication.onrender.com/api/listing/get?sale=true&limit=3');
         const data = await res.json()
         setSaleListing(data)
+        console.log(data)
       } catch (error) {
         console.log(error)
       }
