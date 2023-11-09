@@ -25,7 +25,7 @@ const Listing = () => {
         try {
             setLoading(true)
             const fetchListing = async () => {
-                const res = await fetch(`https://realestatesclient.onrender.com/api/listing/get/${params.listingId}`)
+                const res = await fetch(`https://realestates-apllication.onrender.com/api/listing/get/${params.listingId}`)
                 const data = await res.json()
                 if(data.success === false){
                     setError(true)
@@ -94,7 +94,8 @@ const Listing = () => {
                     </p>
                     {
                         listing.offer && (
-                            <p className='bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>${listing.regularPrice - listing.discountPrice}</p>
+                            <p className='bg-red-900 w-full max-w-[200px] text-white text-center p-1 rounded-md'>${listing.regularPrice - listing.discountPrice}
+                            <span className='font-bold'> Off</span></p>
                         )
                     }
                     </div>
